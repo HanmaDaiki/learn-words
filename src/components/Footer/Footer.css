@@ -1,0 +1,52 @@
+.footer {
+  background-color: #0c1933;
+  display: flex;
+  justify-content: space-between;
+  border-top: 3px solid #fff;
+  padding: 20px 100px;
+}
+
+.footer__copyright {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.footer__contacts-title {
+  margin: 0;
+  color: #fff;
+}
+
+.footer__contacts-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__icon.footer__icon_be {
+  background-image: url(../../image/be-icon.svg);
+  width: 19px;
+  height: 19px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer__icon.footer__icon_git {
+  background-image: url(../../image/git-icon.svg);
+  width: 19px;
+  height: 19px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,15 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px
+}
+
+.logo__image {
+  background-image: url(../../image/logo.svg);
+  width: 54.3px;
+  height: 50px;
+}
+
+.logo__site-name {
+  color: #fff;
+}

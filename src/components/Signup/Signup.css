@@ -1,0 +1,92 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup__container {
+  width: 1080px;
+  height: 652px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+}
+
+.signup__form {
+  margin: 80px 78px 0;
+}
+
+.signup__title {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 100%;
+  color: #fff;
+  padding: 0;
+  margin: 0 0 100px;
+}
+
+.signup__input-field {
+  width: 100%;
+  border-bottom: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #9e21b3, #018cd2);
+  padding-bottom: 10px;
+}
+
+.signup__input-field:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.signup__input {
+  background-color: rgba(0,0,0,0%);
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #fff;
+}
+
+.signup__input::placeholder{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.signup__submit {
+  width: 100%;
+  cursor: pointer;
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  border: 3px solid;
+  border-image-slice: 1;
+  background-color: rgba(0,0,0,0%);
+  color: #fff;
+  padding: 10px 65px;
+  border-radius: 10px;
+  border-image-source: linear-gradient(to right, #9e21b3, #018cd2);
+}
+
+.signup__submit:hover {
+  opacity: .7;
+}
+
+.signup__guest {
+  color: #fff;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+
+.signup__guest:hover {
+  opacity: .7;
+}
