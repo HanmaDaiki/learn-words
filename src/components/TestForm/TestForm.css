@@ -66,7 +66,7 @@
   border: 3px solid #fff;
 }
 
-.test-form__submit {
+.test-form__button {
   background-color: #193055;
   border: 3px solid #fff;
   color: #fff;
@@ -78,9 +78,16 @@
   width: 233px;
   align-self: center;
   cursor: pointer;
+  width: 100%;
 }
 
-.test-form__submit:hover {
+.test-form__buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px
+}
+
+.test-form__buttons:hover {
   opacity: 0.8;
 }
 
@@ -96,5 +103,14 @@
   font-size: 14px;
   line-height: 24px;
   margin-top: 30px;
+  color: #fff;
+}
+
+.test-form__is-check-answer {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100%;
+  width: 100%;
+  text-align: center;
   color: #fff;
 }

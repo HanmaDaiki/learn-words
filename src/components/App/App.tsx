@@ -7,7 +7,8 @@ import { shuffle } from '../../utils/shuffle';
 import { Tooltip, List, Main, Signin, Signup } from '../index';
 import './App.css';
 
-const figure = require('../../image/figure.svg').default;
+const figure1 = require('../../image/background-figure1.svg').default;
+const figure2 = require('../../image/background-figure2.svg').default;
 
 function App() {
   const [difficulty, setDifficulty] = useState<number>(10);
@@ -18,14 +19,14 @@ function App() {
   useEffect(() => {
     if(isChangeDifficulty) {
       window.addEventListener('keydown', (event) => {
-        if(event.key === 'Escape') setIsChangeDifficulty(false);
+        if(event.key === 'Escape') closeAllTooltip();
       });
     } else {
       window.removeEventListener('keydown', (event) => {
-        if(event.key === 'Escape') setIsChangeDifficulty(false);
+        if(event.key === 'Escape') closeAllTooltip();
       });
-    }
-  }, [isChangeDifficulty])
+    };
+  }, [isChangeDifficulty]);
   
   useEffect(() => {
     const shuffleData = shuffle(data).slice(0, difficulty);
@@ -40,7 +41,7 @@ function App() {
     setIsChangeDifficulty(true);
   };
   
-  function closeChangeDifficulty(): void {
+  function closeAllTooltip(): void {
     setIsChangeDifficulty(false);
   };
   
@@ -60,16 +61,21 @@ function App() {
       <Tooltip 
         difficulty={difficulty}
         isOpen={isChangeDifficulty} 
-        onClose={closeChangeDifficulty} 
+        onClose={closeAllTooltip} 
         title='Какой уровень сложности хочешь пройти?'
       >
         <List setDifficulty={setDifficulty} />
       </Tooltip>
       {
-        loggedIn && <img src={figure} alt='фигура' className='app__figure' />
-      } 
+        loggedIn ? 
+        <>
+          <img src={figure1} alt='фигура' className='app__figure app__figure_1' />
+          <img src={figure2} alt='фигура' className='app__figure app__figure_2' />
+        </> :
+        <></>
+      }
     </div>
   );
-}
+};
 
 export { App };

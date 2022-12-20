@@ -1,15 +1,10 @@
-import { Logo } from '../index';
+import { Logo } from '../';
 import './Header.css';
 
-interface HeaderProps {
-  onClickOpenChangeDifficulty: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onClickOpenChangeDifficulty }) => {
+const Header: React.FC = () => {
   return(
     <header className='header'>
       <Logo />
-      <button className='header__button' onClick={() => {onClickOpenChangeDifficulty()}}>Изменить сложность</button>
     </header>
   );
 };

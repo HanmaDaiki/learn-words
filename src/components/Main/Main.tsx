@@ -11,9 +11,9 @@ interface MainProps {
 const Main: React.FC<MainProps> = ({ difficulty, currentWords, openChangeDifficulty }) => {
   return(
     <>
-      <Header onClickOpenChangeDifficulty={openChangeDifficulty} />
+      <Header />
       <main className='main'>
-        <TestForm difficulty={difficulty} currentWords={currentWords}/>
+        <TestForm onClickOpenChangeDifficulty={openChangeDifficulty} difficulty={difficulty} currentWords={currentWords}/>
         <Intructions />
       </main>
       <Footer />
