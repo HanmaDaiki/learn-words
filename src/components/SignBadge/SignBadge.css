@@ -4,6 +4,7 @@
   background-image: url(../../image/picture-sign.svg);
   background-size: cover;
   border-right: 3px solid #fff;
+  background-color: #162542;
 }
 
 .signin-badge__title {

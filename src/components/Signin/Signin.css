@@ -13,6 +13,7 @@
   box-sizing: border-box;
   display: flex;
   position: relative;
+  background-color: #162542;
 }
 
 .signin__form {
