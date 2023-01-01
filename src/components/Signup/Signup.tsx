@@ -48,10 +48,10 @@ const Signup: React.FC<SignupProps> = ({guestEntrance}) => {
         <form className='signup__form' onSubmit={submit}>
           <h2 className='signup__title'>Регистрация</h2>
           <div className='signup__input-field'>
-            <input value={email} onChange={onChangeEmail} className='signup__input' placeholder='Имя пользователя' />
+            <input value={name} onChange={onChangeName} className='signup__input' placeholder='Имя пользователя' />
           </div>
           <div className='signup__input-field'>
-            <input value={name} onChange={onChangeName} className='signup__input' placeholder='Почта' type='email' />
+            <input value={email} onChange={onChangeEmail} className='signup__input' placeholder='Почта' type='email' />
           </div>
           <div className='signup__input-field'>
             <input value={password} onChange={onChangePasswod} className='signup__input' placeholder='Пароль' type='password' />

@@ -3,24 +3,34 @@ class Api {
 
   constructor(url: string) {
     this._url = url;
-  }
+  };
 
   _checkResponse(res: Response) {
     if(res.ok) {
       return res.json();
-    }
+    };
     
     return Promise.reject(res.status);
-  }
+  };
 
-  signUp(name: string, email: string, password:string) {
+  signUp(username: string, email: string, password:string) {
     return fetch(`${this._url}/auth/register`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({username: name, email, password}),
+      body: JSON.stringify({username, email, password}),
     }).then(this._checkResponse);
+  };
+
+  signIn(email: string, password: string) {
+    return fetch(`${this._url}/auth/login`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({email, password}),
+    }).then(this._checkResponse); 
   }
 }
 
