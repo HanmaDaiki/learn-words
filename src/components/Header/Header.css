@@ -21,3 +21,27 @@
 .header__button:hover {
   opacity: 0.5;
 }
+
+.profile-link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #fff;
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+  align-items: center;
+}
+
+.profile-link:hover {
+  opacity: .7;
+}
+
+.profile-link__icon {
+  background-image: url(../../image/icon-profile.svg);
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
