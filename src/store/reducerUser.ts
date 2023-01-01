@@ -3,7 +3,7 @@ import { IAction } from '../interface/IAction';
 const defaultState  = {
   name: '',
   email: '',
-  token: ''
+  token: localStorage.getItem('token') || ''
 };
 
 const UPDATE_USER = 'UPDATE_USER';
@@ -15,7 +15,8 @@ const userReducer = (state: any = defaultState, action: IAction) => {
       return {...state, name: action.payload.name, email: action.payload.email};
     
     case UPDATE_TOKEN:
-      return {...state, token: action.payload};
+      localStorage.setItem('token', action.payload.token);
+      return {...state, token: action.payload.token};
 
     default:
       return state;

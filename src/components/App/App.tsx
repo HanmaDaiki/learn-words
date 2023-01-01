@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { iWord } from '../../interface/iWord';
 import { data } from '../../data/data';
@@ -15,6 +16,15 @@ function App() {
   const [currentWords, setCurrentWords] = useState<Array<iWord>>([{en: '', ru: ''}]);
   const [isChangeDifficulty, setIsChangeDifficulty] = useState<boolean>(false);
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
+  const token = useSelector((state: any) => state.userReducer.token);
+
+  useEffect(() => {
+    console.log(token);
+    
+    if(token.length > 0) {
+      setLoggedIn(true);
+    };
+  }, [token])
   
   useEffect(() => {
     if(isChangeDifficulty) {
