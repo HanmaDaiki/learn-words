@@ -9,6 +9,7 @@ import { Intructions } from "./Intructions/Intructions";
 import { Footer } from "./Footer/Footer";
 import { Signup } from './Signup/Signup';
 import { Signin } from './Signin/Signin';
-import { SignBadge } from "./SignBadge/SignBadge";
+import { SignBadge } from './SignBadge/SignBadge';
+import { Profile } from './Profile/Profile';
 
-export { App, Header, Main, Logo, Tooltip, List, TestForm, Intructions, Footer, Signup, Signin, SignBadge};
+export { App, Header, Main, Logo, Tooltip, List, TestForm, Intructions, Footer, Signup, Signin, SignBadge, Profile};

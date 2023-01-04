@@ -8,6 +8,11 @@
   background-color: #0c1933;
 }
 
+.header__nav {
+  display: flex;
+  gap: 40px;
+}
+
 .header__button {
   background-color: rgba(0,0,0,0%);
   font-weight: 400;
@@ -22,18 +27,24 @@
   opacity: 0.5;
 }
 
-.profile-link {
+.header__link {
   font-weight: 500;
   font-size: 20px;
   line-height: 100%;
   color: #fff;
+  opacity: .5;
   display: flex;
   gap: 15px;
   text-decoration: none;
   align-items: center;
 }
 
-.profile-link:hover {
+.header__link.header__link_active {
+  color: #fff;
+  opacity: 1;
+}
+
+.header__link:hover {
   opacity: .7;
 }
 

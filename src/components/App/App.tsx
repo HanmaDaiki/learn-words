@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { iWord } from '../../interface/iWord';
 import { data } from '../../data/data';
 import { shuffle } from '../../utils/shuffle';
-import { Tooltip, List, Main, Signin, Signup } from '../index';
+import { Tooltip, List, Main, Signin, Signup, Profile } from '../index';
 import './App.css';
 
 const figure1 = require('../../image/background-figure1.svg').default;
@@ -60,12 +60,18 @@ function App() {
       <Routes>
         <Route path='/signin' element={loggedIn ? <Navigate to='/'/> : <Signin guestEntrance={guestEntrance}/>}/>
         <Route path='/signup' element={loggedIn ? <Navigate to='/'/> : <Signup guestEntrance={guestEntrance}/>}/>
+        <Route path='/profile' element={ 
+          loggedIn ? 
+          <Profile /> : 
+          <Navigate to='/signin' />
+          } 
+        />
         <Route path='/' element={ 
           loggedIn ? 
           <Main openChangeDifficulty={openChangeDifficulty} difficulty={difficulty} currentWords={currentWords}/> : 
           <Navigate to='/signin' />
           }
-        /> 
+        />
       </Routes>
 
       <Tooltip 
