@@ -33,6 +33,10 @@
   text-decoration: none;
 }
 
+.footer__link:hover {
+  opacity: .7;
+}
+
 .footer__icon.footer__icon_be {
   background-image: url(../../image/be-icon.svg);
   width: 19px;

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <h2 className='footer__contacts-title'>Контакты</h2>
         <ul className='footer__contacts-list'>
           <li className='footer__item'>
-            <a href='/' className='footer__link' target='_blank' rel='noreferrer'>
+            <a href='https://www.behance.net/79312c30' className='footer__link' target='_blank' rel='noreferrer'>
               <div className='footer__icon footer__icon_be'></div>
               Designer
             </a>
