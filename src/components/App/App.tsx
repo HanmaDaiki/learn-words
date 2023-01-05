@@ -19,8 +19,6 @@ function App() {
   const token = useSelector((state: any) => state.userReducer.token);
 
   useEffect(() => {
-    console.log(token);
-    
     if(token.length > 0) {
       setLoggedIn(true);
     };
