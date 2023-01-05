@@ -24,3 +24,7 @@
   line-height: 160%;
   margin: 0;
 }
+
+.instruction__text:not(:last-child) {
+  margin-bottom: 10px;
+}
