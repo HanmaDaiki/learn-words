@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 
 import { iWord } from '../../interface/iWord';
+import { apiDictionary } from '../../utils/apiDictionary';
 import './TestForm.css';
 
 interface TestFormProps {
@@ -41,6 +42,7 @@ const TestForm: React.FC<TestFormProps> = ({difficulty, currentWords, onClickOpe
         setIsCheckAnswer(false);
       }
     } else { 
+      apiDictionary.getTranslation(currentWords[counter].en);
       if(currentWords[counter].ru.toLowerCase().includes(answer.toLowerCase()) && answer !== '') {
         setCounterCorrect(counterCorrect + 1);
         setIsCorrectAnswer('Верно!');
