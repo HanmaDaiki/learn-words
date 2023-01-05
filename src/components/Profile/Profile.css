@@ -1,0 +1,9 @@
+.profile {
+  background-color: rgba(0,0,0,0%);
+  min-height: 74vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 80px;
+}

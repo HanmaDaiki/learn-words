@@ -1,11 +1,15 @@
 import { Header, Footer } from "../";
+import './Profile.css';
 
 const Profile: React.FC = () => {
   return(
-    <main className='profile'>
+    <>
       <Header />
+      <main className='profile'>
+        МОЙ ПРОФИЛЬ
+      </main>
       <Footer />
-    </main>
+    </>
   );
 } 
 
