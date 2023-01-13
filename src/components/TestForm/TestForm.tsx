@@ -1,16 +1,11 @@
 import {useEffect, useState} from 'react';
+import { IDictionaryValue } from '../../interface/IDictionaryValue';
 
-import { iWord } from '../../interface/iWord';
+import { ITestFormProps } from '../../interface/ITestFormProps';
 import { apiDictionary } from '../../utils/apiDictionary';
 import './TestForm.css';
 
-interface TestFormProps {
-  difficulty: number,
-  currentWords: Array<iWord>,
-  onClickOpenChangeDifficulty: () => void
-}
-
-const TestForm: React.FC<TestFormProps> = ({difficulty, currentWords, onClickOpenChangeDifficulty}) => {
+const TestForm: React.FC<ITestFormProps> = ({difficulty, currentWords, onClickOpenChangeDifficulty}) => {
   const [accuracy, setAccuracy] = useState<number>(100);
   const [counter, setCounter] = useState<number>(0);
   const [answer, setAnswer] = useState<string>('');
@@ -18,17 +13,32 @@ const TestForm: React.FC<TestFormProps> = ({difficulty, currentWords, onClickOpe
   const [isCheckAnswer, setIsCheckAnswer] = useState<boolean>(false);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState<string>('Неверно!');
 
-  useEffect(() => {
-    update();
-  }, [difficulty]);
-
-  function update(): void {
+  const update = (): void => {
     setCounter(0);
     setCounterCorrect(0);
     setAccuracy(100);
   };
 
-  function onSubmit(event: React.ChangeEvent<HTMLFormElement>): void {
+  const checkAnswer = (wordEn: string, answer: string) => {
+    setIsCorrectAnswer('Неверно!');
+    apiDictionary
+      .getTranslation(wordEn)
+      .then(res => {
+        res.def.forEach((value: IDictionaryValue) => {
+          value.tr.forEach((translate) => {
+            console.log(translate.text, answer);
+            if(answer === translate.text) {
+              setIsCorrectAnswer('Верно!');
+              setCounterCorrect(counterCorrect + 1);
+            };
+          });
+        });
+        setAccuracy(Math.floor(((counterCorrect + 1) /(counter + 1)) * 100));
+        setIsCheckAnswer(true);
+      }).catch(error => console.log(error));  
+  }
+
+  const onSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if(isCheckAnswer) {
@@ -41,23 +51,18 @@ const TestForm: React.FC<TestFormProps> = ({difficulty, currentWords, onClickOpe
         setAnswer('');
         setIsCheckAnswer(false);
       }
-    } else { 
-      apiDictionary.getTranslation(currentWords[counter].en);
-      if(currentWords[counter].ru.toLowerCase().includes(answer.toLowerCase()) && answer !== '') {
-        setCounterCorrect(counterCorrect + 1);
-        setIsCorrectAnswer('Верно!');
-        setAccuracy(Math.floor(((counterCorrect + 1) /(counter + 1)) * 100))
-      } else {
-        setIsCorrectAnswer('Неверно!');
-        setAccuracy(Math.floor(((counterCorrect) /(counter + 1)) * 100));
-      };
-      setIsCheckAnswer(true);
-    }
+    } else {
+      checkAnswer(currentWords[counter].en, answer);
+    };
   };
   
-  function answerOnChange(event: React.ChangeEvent<HTMLInputElement>): void {
+  const answerOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setAnswer(event.target.value);
   }
+
+  useEffect(() => {
+    update();
+  }, [difficulty]);
 
   return(
     <form className='test-form' onSubmit={onSubmit}>

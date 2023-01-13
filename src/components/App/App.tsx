@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { iWord } from '../../interface/iWord';
+import { IWord } from '../../interface/IWord';
 import { data } from '../../data/data';
 import { shuffle } from '../../utils/shuffle';
 import { Tooltip, List, Main, Signin, Signup, Profile } from '../index';
@@ -13,7 +13,7 @@ const figure2 = require('../../image/background-figure2.svg').default;
 
 function App() {
   const [difficulty, setDifficulty] = useState<number>(10);
-  const [currentWords, setCurrentWords] = useState<Array<iWord>>([{en: '', ru: ''}]);
+  const [currentWords, setCurrentWords] = useState<Array<IWord>>([{en: '', ru: ''}]);
   const [isChangeDifficulty, setIsChangeDifficulty] = useState<boolean>(false);
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const token = useSelector((state: any) => state.userReducer.token);

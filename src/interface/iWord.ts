@@ -1,4 +1,4 @@
-export interface iWord {
+export interface IWord {
   en: string,
   ru: string,
 }

@@ -17,9 +17,7 @@ class ApiDictionary {
 
   getTranslation(word: string): Promise<any> {
     return fetch(`${this._url}?key=${this._options.key}&lang=${this._options.lang}&text=${word}`)
-      .then(this._checkResponse)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+      .then(this._checkResponse);
   }
 }
 

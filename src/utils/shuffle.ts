@@ -1,6 +1,6 @@
-import { iWord } from "../interface/iWord";
+import { IWord } from "../interface/IWord";
 
-function shuffle(arr: Array<iWord>): Array<iWord> {
+function shuffle(arr: Array<IWord>): Array<IWord> {
   return arr.sort(() => Math.random() - 0.5);
 };
 
