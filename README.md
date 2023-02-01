@@ -1,5 +1,3 @@
-https://learn-words-gamma.vercel.app
-
 # Learn Words
 
 ## Описание
