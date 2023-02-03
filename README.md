@@ -21,4 +21,4 @@
 
 ## DEMO
 
-[Vercel](https://learn-words-3fiuoquk6-hanmadaiki.vercel.app/)
+[Vercel](https://learn-words-gamma.vercel.app/)
