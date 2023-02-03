@@ -12,6 +12,7 @@ const TestForm: React.FC<ITestFormProps> = ({difficulty, currentWords, onClickOp
   const [counterCorrect, setCounterCorrect] = useState<number>(0);
   const [isCheckAnswer, setIsCheckAnswer] = useState<boolean>(false);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState<string>('Неверно!');
+  const [currentTranslate, setCurrentTranslate] = useState<string>('');
 
   const update = (): void => {
     setCounter(0);
@@ -24,10 +25,16 @@ const TestForm: React.FC<ITestFormProps> = ({difficulty, currentWords, onClickOp
     apiDictionary
       .getTranslation(wordEn)
       .then(res => {
+        let counter = 0;
         res.def.forEach((value: IDictionaryValue) => {
           value.tr.forEach((translate) => {
+            if(counter === 0) {
+              setCurrentTranslate(translate.text);
+            };
             console.log(translate.text, answer);
-            if(answer === translate.text) {
+            
+            counter++;
+            if(answer.toLowerCase() === translate.text.toLowerCase()) {
               setIsCorrectAnswer('Верно!');
               setCounterCorrect(counterCorrect + 1);
             };
@@ -52,7 +59,7 @@ const TestForm: React.FC<ITestFormProps> = ({difficulty, currentWords, onClickOp
         setIsCheckAnswer(false);
       }
     } else {
-      checkAnswer(currentWords[counter].en, answer);
+      checkAnswer(currentWords[counter], answer);
     };
   };
   
@@ -72,7 +79,7 @@ const TestForm: React.FC<ITestFormProps> = ({difficulty, currentWords, onClickOp
         </label>
         <div className='test-form__question' id='question'>
           <p className='test-form__question-text'>
-            {currentWords[counter].en }
+            {currentWords[counter] }
           </p>
         </div>
       </div>
@@ -86,7 +93,7 @@ const TestForm: React.FC<ITestFormProps> = ({difficulty, currentWords, onClickOp
             </label>
             <div className='test-form__question' id='question'>
               <p className='test-form__question-text'>
-                {currentWords[counter].ru }
+                {currentTranslate}
               </p>
             </div>
           </div>

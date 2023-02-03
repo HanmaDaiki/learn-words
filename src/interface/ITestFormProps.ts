@@ -2,6 +2,6 @@ import { IWord } from "./IWord"
 
 export interface ITestFormProps {
   difficulty: number,
-  currentWords: Array<IWord>,
+  currentWords: string [],
   onClickOpenChangeDifficulty: () => void
 };

@@ -1,10 +1,9 @@
-import { IWord } from '../../interface/IWord';
 import { TestForm, Intructions, Header, Footer } from '../index';
 import './Main.css';
 
 interface MainProps {
   difficulty: number,
-  currentWords: Array<IWord>
+  currentWords: string []
   openChangeDifficulty: () => void;
 }
 

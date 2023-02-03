@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { IWord } from '../../interface/IWord';
 import { data } from '../../data/data';
+import { db } from '../../data/db';
 import { shuffle } from '../../utils/shuffle';
 import { Tooltip, List, Main } from '../index';
 import './App.css';
@@ -14,9 +15,7 @@ const figure2 = require('../../image/background-figure2.svg').default;
 
 function App() {
   const [difficulty, setDifficulty] = useState<number>(10);
-  const [currentWords, setCurrentWords] = useState<Array<IWord>>([
-    { en: '', ru: '' },
-  ]);
+  const [currentWords, setCurrentWords] = useState<string []>([]);
   const [isChangeDifficulty, setIsChangeDifficulty] = useState<boolean>(false);
 
   // #TODO: Пофиксить Бэк для авторизации и вернуть этот код!
@@ -42,7 +41,7 @@ function App() {
   }, [isChangeDifficulty]);
 
   useEffect(() => {
-    const shuffleData = shuffle(data).slice(0, difficulty);
+    const shuffleData = shuffle(db).slice(0, difficulty);
     setCurrentWords(shuffleData);
   }, [difficulty]);
 
