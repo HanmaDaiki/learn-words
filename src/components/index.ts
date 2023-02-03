@@ -11,5 +11,6 @@ import { Signup } from './Signup/Signup';
 import { Signin } from './Signin/Signin';
 import { SignBadge } from './SignBadge/SignBadge';
 import { Profile } from './Profile/Profile';
+import { Navigation } from "./Navigation/Navigation";
 
-export { App, Header, Main, Logo, Tooltip, List, TestForm, Intructions, Footer, Signup, Signin, SignBadge, Profile};
+export { App, Header, Main, Logo, Tooltip, List, TestForm, Intructions, Footer, Signup, Signin, SignBadge, Profile, Navigation };

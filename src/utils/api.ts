@@ -1,11 +1,11 @@
 class Api {
-  _url: string;
+  private _url: string;
 
   constructor(url: string) {
     this._url = url;
   };
 
-  _checkResponse(res: Response) {
+  private _checkResponse(res: Response) {
     if(res.ok) {
       return res.json();
     };

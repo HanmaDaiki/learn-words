@@ -1,0 +1,34 @@
+.navigation {
+  display: flex;
+  gap: 40px;
+}
+
+.navigation__link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #fff;
+  opacity: .5;
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+  align-items: center;
+}
+
+.navigation__link.navigation__link_active {
+  color: #fff;
+  opacity: 1;
+}
+
+.navigation__link:hover {
+  opacity: .7;
+}
+
+.navigation__profile-icon {
+  background-image: url(../../image/icon-profile.svg);
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
