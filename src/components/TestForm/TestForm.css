@@ -87,7 +87,7 @@
   gap: 20px
 }
 
-.test-form__buttons:hover {
+.test-form__button:hover {
   opacity: 0.8;
 }
 
